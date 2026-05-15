@@ -263,7 +263,6 @@
             to   { transform: translateY(0);    opacity: 1; }
         }
 
-        /* RESPONSIVO */
         @media (max-width: 768px) {
             .topo { flex-direction: column; text-align: center; }
             .menu { flex-wrap: wrap; }
@@ -277,7 +276,7 @@
 
     <header class="topo">
         <div class="logo"><img src="assets/ype-removebg-preview.png" alt="logo" style="width: auto; height: 100px;"></div>
-        <h1 style="color:white; font-size:20px;">Sistema Inteligente de Controle de Qualidade</h1>
+        <h1 style="color:white;">Sistema Inteligente de Controle de Qualidade</h1>
     </header>
 
     <nav class="menu">
@@ -293,7 +292,6 @@
             <button class="btnCadastrar" onclick="abrirModal()">+ Novo Produto</button>
         </div>
 
-        <!-- CONTADORES -->
         <div class="contagem">
             <span class="tag-contagem tag-total">Total: <strong id="totalCount">6</strong></span>
             <span class="tag-contagem tag-seguro">✔ Seguros: <strong id="seguroCount">4</strong></span>
@@ -354,7 +352,6 @@
 
     </div>
 
-    <!-- MODAL -->
     <div class="modal" id="modal">
         <div class="modal-content">
 
@@ -388,12 +385,10 @@
         </div>
     </div>
 
-    <!-- TOAST DE CONFIRMAÇÃO -->
     <div class="toast" id="toast">✔ Produto cadastrado com sucesso!</div>
 
     <script>
 
-        // LISTA DE PRODUTOS (PROTÓTIPO — dados em memória)
 
         const produtos = [
             { codigo: "A3F8KL29", nome: "Detergente Neutro 500ml",  categoria: "Limpeza",    temperatura: 18, micro: 72, status: "Seguro"     },
@@ -404,7 +399,6 @@
             { codigo: "F2PL3DGA", nome: "Álcool Gel 70% 500ml",      categoria: "Higiene",    temperatura: 19, micro: 60, status: "Seguro"     }
         ];
 
-        // GERA CÓDIGO ALEATÓRIO
 
         function gerarCodigo() {
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -415,7 +409,6 @@
             return codigo;
         }
 
-        // ABRE / FECHA MODAL
 
         function abrirModal() {
             document.getElementById("modal").classList.add("aberto");
@@ -433,7 +426,6 @@
             document.getElementById("micro").value = "";
         }
 
-        // CADASTRA PRODUTO (PROTÓTIPO)
 
         function cadastrarProduto() {
 
@@ -452,7 +444,6 @@
                 return;
             }
 
-            // DETERMINA STATUS AUTOMATICAMENTE (mesma lógica do backend)
 
             let status = "Seguro";
             if (temperatura > 25 && micro > 80) {
@@ -479,7 +470,6 @@
             mostrarToast();
         }
 
-        // ADICIONA LINHA NA TABELA
 
         function adicionarLinha(produto) {
 
@@ -500,7 +490,6 @@
             tbody.appendChild(tr);
         }
 
-        // ATUALIZA CONTADORES
 
         function atualizarContadores() {
             document.getElementById("totalCount").innerText     = produtos.length;
@@ -509,7 +498,6 @@
             document.getElementById("indefinidoCount").innerText = produtos.filter(p => p.status === "Indefinido").length;
         }
 
-        // TOAST DE CONFIRMAÇÃO
 
         function mostrarToast() {
             const toast = document.getElementById("toast");
@@ -517,7 +505,6 @@
             setTimeout(() => { toast.style.display = "none"; }, 3000);
         }
 
-        // FECHA MODAL AO CLICAR FORA
 
         document.getElementById("modal").addEventListener("click", function(e) {
             if (e.target === this) fecharModal();
