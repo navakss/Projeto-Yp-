@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento QR Code</title>
+
+    <link rel="stylesheet" href="style2.css">
+
+    <script>
+        function mostrarLote() {
+            document.getElementById("produto").style.display = "block";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo">
+            <img src="ype-removebg-preview.png">
+        </div>
+
+        <h1>Sistema Inteligente de Controle de Qualidade</h1>
+
+    </header>
+
+    <nav class="menu">
+
+        <a href="index.html">DASHBOARD</a>
+        <a class="ativo" href="index2.html">RASTREAMENTO QR CODE</a>
+
+    </nav>
+
+    <div class="container">
+
+        <h2>Rastreamento por QR Code</h2>
+
+        <!-- CARD QR -->
+
+        <div class="qr-card">
+
+            <div class="icone">
+                ⬚
+            </div>
+
+            <h3>Simular Leitura de QR Code</h3>
+
+            <p>
+                Selecione um lote para visualizar informações completas de rastreabilidade
+            </p>
+
+            <div class="botoes">
+
+                <button onclick="mostrarLote()">
+                    ESCANEAR L001
+                </button>
+
+                <button onclick="mostrarLote()">
+                    ESCANEAR L002
+                </button>
+
+                <button onclick="mostrarLote()">
+                    ESCANEAR L003
+                </button>
+
+                <button onclick="mostrarLote()">
+                    ESCANEAR L004
+                </button>
+
+                <button onclick="mostrarLote()">
+                    ESCANEAR L005
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="vazio" id="vazio">
+            <div class="icone-cinza">
+                ⬚
+            </div>
+            <p>
+                Escaneie um QR Code para visualizar informações do produto
+            </p>
+        </div>
+
+        <div class="produto" id="produto">
+            <div class="topo-produto">
+                <div>
+                    <h3>Detergente Limão 500ml</h3>
+                    <span>Lote: L001</span>
+                </div>
+                <div class="status">
+                    ✔ Aprovado
+                </div>
+            </div>
+            <hr>
+            <div class="info">
+                <div class="coluna">
+                    <p><strong>Data de Fabricação</strong><br>15/05/2026</p>
+                    <p><strong>Validade</strong><br>15/05/2028</p>
+                    <p><strong>Unidade Fabril</strong><br>Unidade Amparo - SP</p>
+                    <p><strong>Linha de Produção</strong><br>Linha 3 - Turno A</p>
+                </div>
+                <div class="coluna">
+                    <p><strong>Lote Matéria-Prima</strong><br>MP-2026-0512</p>
+                    <p><strong>Responsável Técnico</strong><br>João Silva</p>
+                </div>
+            </div>
+            <hr>
+            <h4>Controle de Qualidade</h4>
+            <div class="qualidade">
+                <div class="box">
+                    <span>Temperatura de Produção</span>
+                    <h5>22°C</h5>
+                    <small>Limite máximo: 25°C</small>
+                </div>
+                <div class="box">
+                    <span>Nível Microbiológico</span>
+                    <h5>85%</h5>
+                    <small>Padrão mínimo: 80%</small>
+                </div>
+            </div>
+        </div>
+        
+        <!--Lote 02-->
+        <div class="produto" id="produto">
+            <div class="topo-produto">
+                <div>
+                    <h3>Detergente Neutro 500ml</h3>
+                    <span>Lote: L002</span>
+                </div>
+                <div class="status">
+                    ✔ Aprovado
+                </div>
+            </div>
+            <hr>
+            <div class="info">
+                <div class="coluna">
+                    <p><strong>Data de Fabricação</strong><br>15/05/2026</p>
+                    <p><strong>Validade</strong><br>15/05/2028</p>
+                    <p><strong>Unidade Fabril</strong><br>Unidade Amparo - SP</p>
+                    <p><strong>Linha de Produção</strong><br>Linha 1 - Turno A</p>
+                </div>
+                <div class="coluna">
+                    <p><strong>Lote Matéria-Prima</strong><br>MP-2026-0512</p>
+                    <p><strong>Responsável Técnico</strong><br>Maria Santos</p>
+                </div>
+            </div>
+            <hr>
+            <h4>Controle de Qualidade</h4>
+            <div class="qualidade">
+                <div class="box">
+                    <span>Temperatura de Produção</span>
+                    <h5>23°C</h5>
+                    <small>Limite máximo: 25°C</small>
+                </div>
+                <div class="box">
+                    <span>Nível Microbiológico</span>
+                    <h5>92%</h5>
+                    <small>Padrão mínimo: 80%</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

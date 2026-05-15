@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard Ypê</title>
+
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo">
+            <img src="ype-removebg-preview.png">
+        </div>
+
+        <h2>Sistema Inteligente de Controle de Qualidade</h2>
+
+    </header>
+
+    <nav class="menu">
+
+        <a class="ativo" href="index.html">DASHBOARD</a>
+        <a href="index2.html">RASTREAMENTO QR CODE</a>
+
+    </nav>
+
+    <div class="container">
+
+        <h1>Dashboard de Controle de Qualidade - Ypê</h1>
+
+        <div class="cards">
+
+            <div class="card blue">
+                <h2>Temperatura Média</h2>
+                <p>24.5°C</p>
+                <span>Limite: 25°C</span>
+            </div>
+
+            <div class="card purple">
+                <h2>Nível Microbiológico</h2>
+                <p>74.4%</p>
+                <span>Padrão > 80%</span>
+            </div>
+
+            <div class="card green">
+                <h2>Lotes Aprovados</h2>
+                <p>3/5</p>
+                <span>60% de aprovação</span>
+            </div>
+
+        </div>
+
+        <div class="status">
+
+            <h2>Status dos Lotes em Produção</h2>
+
+            <div class="container">
+
+        <h2>Status dos Lotes em Produção</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Lote</th>
+                    <th>Produto</th>
+                    <th>Data</th>
+                    <th>Temp (°C)</th>
+                    <th>Micro (%)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><strong>L001</strong></td>
+                    <td>Detergente Limão</td>
+                    <td>15/05/2026</td>
+                    <td class="temp-ok">22°C</td>
+                    <td class="micro-ok">85%</td>
+                    <td><span class="status aprovado">✔ Aprovado</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>L002</strong></td>
+                    <td>Detergente Neutro</td>
+                    <td>15/05/2026</td>
+                    <td class="temp-ok">23°C</td>
+                    <td class="micro-ok">92%</td>
+                    <td><span class="status aprovado">✔ Aprovado</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>L003</strong></td>
+                    <td>Detergente Coco</td>
+                    <td>14/05/2026</td>
+                    <td class="temp-critico">27°C</td>
+                    <td class="micro-critico">45%</td>
+                    <td><span class="status critico">⚠ Crítico</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>L004</strong></td>
+                    <td>Detergente Maçã</td>
+                    <td>15/05/2026</td>
+                    <td class="temp-ok">24°C</td>
+                    <td class="micro-ok">88%</td>
+                    <td><span class="status aprovado">✔ Aprovado</span></td>
+                </tr>
+
+                <tr>
+                    <td><strong>L005</strong></td>
+                    <td>Detergente Lavanda</td>
+                    <td>14/05/2026</td>
+                    <td class="temp-alerta">25°C</td>
+                    <td class="micro-alerta">62%</td>
+                    <td><span class="status atencao">⚠ Atenção</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
