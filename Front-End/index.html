@@ -4,132 +4,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Dashboard Ypê</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #e9e9e9;
+        }
+
+        /* TOPO */
+        .topo {
+            background: #0d47a1;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-weight: 900;
+            font-size: 22px;
+            color: #0d47a1;
+            letter-spacing: 2px;
+            min-width: 90px;
+        }
+
+        /* MENU */
+        .menu {
+            background: #1976d2;
+            padding: 12px 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .ativo {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* CONTAINER */
+        .container {
+            padding: 25px;
+        }
+
+        h1 {
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        /* CARDS */
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 220px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card span {
+            font-size: 13px;
+            color: gray;
+        }
+
+        .blue {
+            border-left: 6px solid #1e88e5;
+            background: #eef6ff;
+        }
+
+        .purple {
+            border-left: 6px solid #9c27b0;
+            background: #f8effc;
+        }
+
+        .green {
+            border-left: 6px solid #43a047;
+            background: #eef8ef;
+        }
+
+        /* TABELAS */
+        .status,
+        .tabela-container,
+        .produto,
+        .qr-card {
+            margin-top: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #f0f0f0;
+        }
+
+        th, td {
+            padding: 16px 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        /* STATUS */
+        .statusProduto,
+        .aprovado,
+        .atencao,
+        .critico {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .aprovado { background: #2e7d32; }
+        .atencao  { background: #ef6c00; }
+        .critico  { background: #d32f2f; }
+
+        /* SEM DADOS */
+        #semDados {
+            margin-top: 20px;
+            text-align: center;
+            color: gray;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .cards { flex-direction: column; }
+            .card  { width: 100%; }
+            .topo  { flex-direction: column; text-align: center; }
+            .menu  { flex-wrap: wrap; }
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="topo">
-
-        <div class="logo">
-            <img src="ype-removebg-preview.png">
-        </div>
-
-        <h2>Sistema Inteligente de Controle de Qualidade</h2>
-
+        <div class="logo"><img src="assets/ype-removebg-preview.png" alt="logo" style="width: auto; height: 100px;"></div>
+        <h1>Sistema Inteligente de Controle de Qualidade</h1>
     </header>
 
     <nav class="menu">
-
         <a class="ativo" href="index.html">DASHBOARD</a>
-        <a href="index2.html">RASTREAMENTO QR CODE</a>
-
+        <a href="analise.html">ANÁLISE</a>
+        <a href="cadastro.html">CADASTRO</a>
     </nav>
 
     <div class="container">
 
-        <h1>Dashboard de Controle de Qualidade - Ypê</h1>
+        <h1>Dashboard de Controle de Qualidade — Ypê</h1>
 
         <div class="cards">
 
             <div class="card blue">
                 <h2>Temperatura Média</h2>
-                <p>24.5°C</p>
+                <p>21.4°C</p>
                 <span>Limite: 25°C</span>
             </div>
 
             <div class="card purple">
-                <h2>Nível Microbiológico</h2>
-                <p>74.4%</p>
-                <span>Padrão > 80%</span>
+                <h2>Nível Microbiológico Médio</h2>
+                <p>63%</p>
+                <span>Padrão mínimo: 80%</span>
             </div>
 
             <div class="card green">
-                <h2>Lotes Aprovados</h2>
-                <p>3/5</p>
-                <span>60% de aprovação</span>
+                <h2>Produtos Seguros</h2>
+                <p>4</p>
+                <span>Status aprovado</span>
             </div>
 
         </div>
 
         <div class="status">
 
-            <h2>Status dos Lotes em Produção</h2>
+            <h2>Produtos Analisados</h2>
 
-            <div class="container">
-
-        <h2>Status dos Lotes em Produção</h2>
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Lote</th>
-                    <th>Produto</th>
-                    <th>Data</th>
-                    <th>Temp (°C)</th>
-                    <th>Micro (%)</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td><strong>L001</strong></td>
-                    <td>Detergente Limão</td>
-                    <td>15/05/2026</td>
-                    <td class="temp-ok">22°C</td>
-                    <td class="micro-ok">85%</td>
-                    <td><span class="status aprovado">✔ Aprovado</span></td>
-                </tr>
-
-                <tr>
-                    <td><strong>L002</strong></td>
-                    <td>Detergente Neutro</td>
-                    <td>15/05/2026</td>
-                    <td class="temp-ok">23°C</td>
-                    <td class="micro-ok">92%</td>
-                    <td><span class="status aprovado">✔ Aprovado</span></td>
-                </tr>
-
-                <tr>
-                    <td><strong>L003</strong></td>
-                    <td>Detergente Coco</td>
-                    <td>14/05/2026</td>
-                    <td class="temp-critico">27°C</td>
-                    <td class="micro-critico">45%</td>
-                    <td><span class="status critico">⚠ Crítico</span></td>
-                </tr>
-
-                <tr>
-                    <td><strong>L004</strong></td>
-                    <td>Detergente Maçã</td>
-                    <td>15/05/2026</td>
-                    <td class="temp-ok">24°C</td>
-                    <td class="micro-ok">88%</td>
-                    <td><span class="status aprovado">✔ Aprovado</span></td>
-                </tr>
-
-                <tr>
-                    <td><strong>L005</strong></td>
-                    <td>Detergente Lavanda</td>
-                    <td>14/05/2026</td>
-                    <td class="temp-alerta">25°C</td>
-                    <td class="micro-alerta">62%</td>
-                    <td><span class="status atencao">⚠ Atenção</span></td>
-                </tr>
-
-            </tbody>
-
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A3F8KL29</td>
+                        <td>Detergente Neutro 500ml</td>
+                        <td>Limpeza</td>
+                        <td><span class="aprovado">Seguro</span></td>
+                    </tr>
+                    <tr>
+                        <td>B7QM4RZX</td>
+                        <td>Amaciante Floral 2L</td>
+                        <td>Lavanderia</td>
+                        <td><span class="aprovado">Seguro</span></td>
+                    </tr>
+                    <tr>
+                        <td>C1VN9SWE</td>
+                        <td>Limpador Multiuso 1L</td>
+                        <td>Limpeza</td>
+                        <td><span class="critico">Recolhido</span></td>
+                    </tr>
+                    <tr>
+                        <td>D5HT2OPJ</td>
+                        <td>Sabão em Pó 1kg</td>
+                        <td>Lavanderia</td>
+                        <td><span class="aprovado">Seguro</span></td>
+                    </tr>
+                    <tr>
+                        <td>E9YU6CBN</td>
+                        <td>Desinfetante Pinho 2L</td>
+                        <td>Higiene</td>
+                        <td><span class="atencao">Em Análise</span></td>
+                    </tr>
+                    <tr>
+                        <td>F2PL3DGA</td>
+                        <td>Álcool Gel 70% 500ml</td>
+                        <td>Higiene</td>
+                        <td><span class="aprovado">Seguro</span></td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
 
     </div>
 
 </body>
-
 </html>
